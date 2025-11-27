@@ -124,4 +124,11 @@ a{text-decoration:none}
 .scrollbar-thin::-webkit-scrollbar-track {
     background: #3b2f2f;
 }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
