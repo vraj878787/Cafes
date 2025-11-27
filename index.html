@@ -326,5 +326,29 @@
   <!-- SCRIPT.JS (inline for simplicity) -->
   <script src="script.js"></script>
   <script>feather.replace();</script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (!menuBtn || !mobileMenu) {
+        console.error("Navbar elements not found!");
+        return;
+    }
+
+    // Toggle menu
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    });
+
+    // Close menu when clicking any link
+    mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+        });
+    });
+});
+</script>
+
 </body>
 </html>
