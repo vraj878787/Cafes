@@ -98,11 +98,7 @@
     <!-- SCROLL WRAPPER -->
     <div id="reviewsWrapper" class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth no-scrollbar">
 
-      <div class="text-center mt-4">
-    <button id="seeMoreReviews" class="bg-gold-500 text-cafe-900 font-medium py-2 px-5 rounded-full">
-        See More Reviews
-    </button>
-</div>
+    </div>
 
 
         <!-- REVIEW CARD 1 -->
@@ -135,6 +131,11 @@
     <div class="flex mb-2">⭐⭐⭐⭐⭐</div>
     <p class="text-gold-100 mb-3">Their pastries are absolutely delicious.</p>
     <p class="text-gold-300 text-sm">— Lucas Brown</p>
+</div>
+
+  <!-- SEE MORE CARD -->
+<div id="seeMoreCard" class="min-w-[260px] snap-start flex items-center justify-center bg-gold-200 text-cafe-900 font-semibold rounded-xl shadow cursor-pointer">
+    <p>See More Reviews →</p>
 </div>
 
 <!-- REVIEW CARD 5 -->
@@ -361,6 +362,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+  
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const seeMoreBtn = document.getElementById("seeMoreReviews");
@@ -371,6 +373,22 @@ document.addEventListener("DOMContentLoaded", function () {
             card.style.display = "block";
         });
         seeMoreBtn.style.display = "none";
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const seeMoreCard = document.getElementById("seeMoreCard");
+    const hiddenReviews = document.querySelectorAll(".hidden-review");
+
+    seeMoreCard.addEventListener("click", () => {
+        hiddenReviews.forEach(card => {
+            card.style.display = "block";
+        });
+
+        // Remove the See More card
+        seeMoreCard.remove();
     });
 });
 </script>
