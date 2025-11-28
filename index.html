@@ -24,38 +24,43 @@
 <body class="bg-cafe-50 font-sans text-cafe-900">
 
   <!-- Navbar (inline component) -->
-  <nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="flex items-center gap-3">
-        <i data-feather="coffee" class="text-cafe-800 w-6 h-6"></i>
-        <span class="text-2xl font-serif font-bold text-cafe-800">Cafe J'adore</span>
-      </div>
-
-      <div class="hidden md:flex items-center gap-8 text-cafe-800 font-medium">
-        <a href="#menu" class="nav-link">Menu</a>
-        <a href="#gallery" class="nav-link">Gallery</a>
-        <a href="#reviews" class="nav-link">Reviews</a>
-        <a href="#staff" class="nav-link">Meet Staff</a>
-        <a href="#book" class="nav-link">Book Table</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </div>
-
-      <div class="md:hidden">
-        <button id="menuBtn" class="focus:outline-none" aria-label="Open menu">
-          <i data-feather="menu" class="w-7 h-7 text-cafe-800"></i>
-        </button>
-      </div>
+  <!-- NAVBAR -->
+<nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Left: brand -->
+    <div class="flex items-center gap-3">
+      <i data-feather="coffee" class="text-cafe-800 w-6 h-6"></i>
+      <span class="text-2xl font-serif font-bold text-cafe-800">Cafe J'adore</span>
     </div>
 
-    <div id="mobileMenu" class="hidden bg-white shadow-md md:hidden flex-col py-4 px-6 space-y-3">
-      <a href="#menu" class="mobile-link block">Menu</a>
-      <a href="#gallery" class="mobile-link block">Gallery</a>
-      <a href="#reviews" class="mobile-link block">Reviews</a>
-      <a href="#staff" class="mobile-link block">Meet Staff</a>
-      <a href="#book" class="mobile-link block">Book Table</a>
-      <a href="#contact" class="mobile-link block">Contact</a>
+    <!-- Center: links (centered on desktop) -->
+    <div class="hidden md:flex nav-links items-center gap-8 text-cafe-800 font-medium">
+      <a href="#menu" class="nav-link">Menu</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#staff" class="nav-link">Meet Staff</a>
+      <a href="#book" class="nav-link">Book Table</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </div>
-  </nav>
+
+    <!-- Right: mobile menu button -->
+    <div class="md:hidden flex items-center">
+      <button id="menuBtn" class="focus:outline-none" aria-label="Open menu">
+        <i data-feather="menu" class="w-7 h-7 text-cafe-800"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu (hidden by default) -->
+  <div id="mobileMenu" class="hidden bg-white shadow-md md:hidden flex-col py-4 px-6 space-y-3">
+    <a href="#menu" class="mobile-link block">Menu</a>
+    <a href="#gallery" class="mobile-link block">Gallery</a>
+    <a href="#reviews" class="mobile-link block">Reviews</a>
+    <a href="#staff" class="mobile-link block">Meet Staff</a>
+    <a href="#book" class="mobile-link block">Book Table</a>
+    <a href="#contact" class="mobile-link block">Contact</a>
+  </div>
+</nav>
 
   <div class="pt-24"></div>
 
