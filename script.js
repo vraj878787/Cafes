@@ -74,3 +74,62 @@ document.addEventListener('keydown', (e) => {
     menuBtn.setAttribute('aria-expanded', 'false');
   }
 });
+// wait for DOM
+document.addEventListener("DOMContentLoaded", function () {
+  /* ---------------- NAVBAR: mobile toggle + close on link click ---------------- */
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // close mobile menu when any mobile link clicked
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+  }
+
+  /* ---------------- REVIEWS: Show More + stars + smooth append ---------------- */
+  const moreReviews = [
+    { img: "http://static.photos/food/200x160/5", text: "Great value for money and welcoming staff!" },
+    { img: "http://static.photos/food/200x160/6", text: "Perfect place for an evening out. Mocktails were delicious." },
+    { img: "http://static.photos/food/200x160/7", text: "Busy but well-managed. Food was worth the wait." },
+    { img: "http://static.photos/food/200x160/8", text: "Cozy atmosphere, fast service, top quality coffee." },
+    { img: "http://static.photos/food/200x160/9", text: "A vibrant place with flavors that stand out. Five stars!" }
+  ];
+
+  const wrapper = document.getElementById("reviewsWrapper");
+  const showMoreBtn = document.getElementById("showMoreBtn");
+
+  if (showMoreBtn && wrapper) {
+    showMoreBtn.addEventListener("click", () => {
+      // remove the button first so appending looks neat
+      showMoreBtn.remove();
+
+      // append each extra review card
+      moreReviews.forEach(r => {
+        const div = document.createElement("div");
+        div.className = "review-card";
+        div.innerHTML = `
+          <img src="${r.img}" class="review-img" loading="lazy" alt="Dish">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">${r.text}</p>
+        `;
+        wrapper.appendChild(div);
+      });
+    });
+  }
+
+  /* ---------------- small enhancement: auto-hide mobile menu on outside click ---------------- */
+  document.addEventListener("click", function (e) {
+    if (!mobileMenu || !menuBtn) return;
+    // If click is outside mobileMenu and not the menu button, close it
+    if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+      mobileMenu.classList.add("hidden");
+    }
+  });
+});
