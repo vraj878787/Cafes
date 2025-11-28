@@ -154,3 +154,66 @@ a{text-decoration:none}
     transform: translateY(-3px);
 }
 
+/* ---------- NAVBAR: center links and font ---------- */
+/* apply font only to nav links — you can change family or weight */
+.nav-links a, .nav-links .nav-link {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* center the nav-links container in the navbar */
+.nav-links {
+  justify-content: center;
+  width: 100%;
+}
+
+/* ensure container alignment: brand left, links centered, burger right */
+nav > .container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+}
+
+/* nav link appearance & spacing */
+.nav-links .nav-link,
+#mobileMenu a {
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: background .18s ease, color .18s ease;
+}
+.nav-links .nav-link:hover,
+#mobileMenu a:hover {
+  background: rgba(212,166,87,0.08);
+}
+
+/* mobile menu link center */
+#mobileMenu { text-align: center; }
+
+/* ---------- STARS & REVIEWS ---------- */
+.review-card .stars {
+  font-size: 14px;
+  color: #e4c06a; /* gold */
+  margin: 8px 0;
+  -webkit-text-stroke: 0.2px #b58f3b;
+}
+
+/* slightly tweak review text style */
+.review-card .review-text {
+  color: #3b2f25;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+/* ensure review-card tap target is comfortable */
+.review-card { padding: 14px; }
+
+/* ensure reviews-row horizontal scroll keeps within viewport */
+.reviews-row { -webkit-overflow-scrolling: touch; }
+
+/* small responsive tweak: desktop shows multiple cards */
+@media (min-width: 1024px) {
+  .reviews-row { gap: 20px; }
+  .review-card { min-width: 320px; }
+}
